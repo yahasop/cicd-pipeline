@@ -16,11 +16,13 @@ pipeline {
             steps {
                 echo 'Build'
                 sh 'npm install'
+                sh 'ls'
             }
         }
         stage('Testing') {
             steps {
                 echo 'Testing'
+                sh 'npm test'
             }
         }
         stage('Build Docker Image') {
