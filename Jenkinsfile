@@ -15,10 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build'
-                sh '''
-                ls
-                pwd
-                '''
+                sh 'npm install'
             }
         }
         stage('Testing') {
