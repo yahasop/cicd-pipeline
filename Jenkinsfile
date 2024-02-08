@@ -35,7 +35,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploy'
-                sh 'docker run -d --expose 3000 -p 3000:3000 nodemain:v1.0'
+                sh 'docker stop nodemain1.0 || true'
+                sh 'docker rm nodemain1.0 || true'
+                sh 'docker run -d --expose 3000 -p 3000:3000 --name nodemain1.0 nodemain:v1.0'
             }
         }
     }
