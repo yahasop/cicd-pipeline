@@ -37,7 +37,7 @@ pipeline {
                 echo 'Deploy'
                 sh 'docker stop nodedev1.0 || true'
                 sh 'docker rm nodedev1.0 || true'
-                sh 'docker run -d --expose 3000 -p 3000:3000 --name nodedev1.0 nodedev:v1.0'
+                sh 'docker run -d --expose 3001 -p 3001:3000 --name nodedev1.0 nodedev:v1.0'
             }
         }
     }
