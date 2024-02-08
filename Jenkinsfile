@@ -5,6 +5,7 @@ pipeline {
         stage('SCM Checkout') {
             steps {
                 echo 'SCM Checkout'
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/yahasop/cicd-pipeline.git']])
             }
         }
         stage('Build') {
