@@ -1,6 +1,10 @@
 pipeline {
     agent any
-  
+    
+    tools {
+        tool name: 'nodejs', type: 'nodejs'
+    }
+    
     stages {
         stage('SCM Checkout') {
             steps {
@@ -11,6 +15,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build'
+                sh '''
+                ls
+                pwd
+                '''
             }
         }
         stage('Testing') {
