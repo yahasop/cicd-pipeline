@@ -3,6 +3,7 @@ pipeline {
     
     tools {
         nodejs 'nodejs7'
+        docker 'docker-lab'
     }
     
     stages {
@@ -28,6 +29,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo 'Build Docker Image'
+                sh 'docker build . -t nodemain:v1.0'
             }
         }
         stage('Deploy') {
